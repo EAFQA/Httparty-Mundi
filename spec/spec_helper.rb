@@ -4,10 +4,14 @@ require "httparty/response/headers"
 
 require_relative "../services/token_service.rb"
 require_relative "../services/newCard_service.rb"
+require_relative "../services/consultallcards_service.rb"
+require_relative "../services/generatebullet_service.rb"
 
 RSpec.configure do |config|
   include Token
   include Cadastrar
+  include Consultar
+  include GerarBoleto
 
   config.color = true
   config.formatter = :documentation

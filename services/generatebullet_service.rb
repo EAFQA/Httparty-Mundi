@@ -1,4 +1,4 @@
-module Consultar
+module GerarBoleto
   include HTTParty
 
   base_uri "https://dev.pinbank.com.br/Services/api"
