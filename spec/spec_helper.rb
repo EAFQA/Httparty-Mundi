@@ -9,8 +9,8 @@ RSpec.configure do |config|
   include Token
   include Cadastrar
 
-  config.formatter = :documentation
   config.color = true
+  config.formatter = :documentation
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
