@@ -14,7 +14,7 @@ describe "post" do
 
     it "Entao recebo a confirmacao com sucesso" do
       @header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
-                 "RequestOrigin" => "5", "Authorization" => "bearer " + @token.parsed_response["access_token"] }
+                  "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
 
       @body = {
         "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "StatusCartao": "Todos" },
@@ -28,7 +28,7 @@ describe "post" do
 
     it "Entao recebo código canal não encontrado" do
       @header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
-                 "RequestOrigin" => "5", "Authorization" => "bearer " + @token.parsed_response["access_token"] }
+                  "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
 
       @body = {
         "Data": { "CodigoCanal": 44, "CodigoCliente": 7309, "StatusCartao": "Todos" },
@@ -41,8 +41,7 @@ describe "post" do
 
     it "Entao recebo código cliente não encontrado" do
       @header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
-                 "RequestOrigin" => "5", "Authorization" => "bearer " + @token.parsed_response["access_token"] }
-
+                  "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
       @body = {
         "Data": { "CodigoCanal": 47, "CodigoCliente": 7308, "StatusCartao": "Todos" },
       }.to_json
