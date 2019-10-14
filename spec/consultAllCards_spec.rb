@@ -19,13 +19,37 @@ describe "post" do
       @body = {
         "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "StatusCartao": "Todos" },
       }.to_json
-      puts @header
-      puts @body
+
       @card = Consultar.post("/Transacoes/ConsultarCartoes", body: @body, headers: @header)
       expect(@card.response.code).to eql "200"
-      puts @card
       expect(@card.parsed_response["Message"]).to eql "Success"
       expect(@card.parsed_response["ResultCode"]).to eql 0
+    end
+
+    it "Entao recebo código canal não encontrado" do
+      @header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
+                 "RequestOrigin" => "5", "Authorization" => "bearer " + @token.parsed_response["access_token"] }
+
+      @body = {
+        "Data": { "CodigoCanal": 44, "CodigoCliente": 7309, "StatusCartao": "Todos" },
+      }.to_json
+      @card = Consultar.post("/Transacoes/ConsultarCartoes", body: @body, headers: @header)
+      expect(@card.response.code).to eql "200"
+      expect(@card.parsed_response["Message"]).to eql "Usuário não encontrado."
+      expect(@card.parsed_response["ResultCode"]).to eql 6
+    end
+
+    it "Entao recebo código cliente não encontrado" do
+      @header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
+                 "RequestOrigin" => "5", "Authorization" => "bearer " + @token.parsed_response["access_token"] }
+
+      @body = {
+        "Data": { "CodigoCanal": 47, "CodigoCliente": 7308, "StatusCartao": "Todos" },
+      }.to_json
+      @card = Consultar.post("/Transacoes/ConsultarCartoes", body: @body, headers: @header)
+      expect(@card.response.code).to eql "200"
+      expect(@card.parsed_response["Message"]).to eql "Usuário não encontrado."
+      expect(@card.parsed_response["ResultCode"]).to eql 6
     end
   end
 end

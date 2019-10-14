@@ -1,11 +1,15 @@
 require "httparty"
 require "httparty/request"
 require "httparty/response/headers"
+require "factory_bot"
+
+require_relative "factories"
 
 require_relative "../services/token_service.rb"
 require_relative "../services/newCard_service.rb"
 require_relative "../services/consultallcards_service.rb"
 require_relative "../services/generatebullet_service.rb"
+require_relative "../services/token.rb"
 
 RSpec.configure do |config|
   include Token
@@ -25,4 +29,5 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+  config.include FactoryBot::Syntax::Methods
 end

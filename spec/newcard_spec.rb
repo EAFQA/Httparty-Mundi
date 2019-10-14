@@ -1,11 +1,6 @@
 describe "post" do
   def token(grant_type, username, password)
-    @body =
-      {
-        grant_type: grant_type,
-        username: username,
-        password: password,
-      }
+    @body = build(:new_token).to_hash
     @token = Token.post("/token", body: @body)
   end
 
@@ -16,8 +11,8 @@ describe "post" do
       @header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
                  "RequestOrigin" => "5", "Authorization" => "bearer " + @token.parsed_response["access_token"] }
       @body = {
-        "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "Apelido": "Teste97", "NomeImpresso": "Eduardo Teste97",
-                  "NumeroCartao": "5283438702935312", "DataValidade": "202109", "CodigoSeguranca": "501",
+        "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "Apelido": "Testendo1234", "NomeImpresso": "Testando1234",
+                  "NumeroCartao": "5533006298137243", "DataValidade": "202109", "CodigoSeguranca": "501",
                   "ValidarCartao": "false" },
       }.to_json
       @card = Cadastrar.post("/Transacoes/IncluirCartao", body: @body, headers: @header)
