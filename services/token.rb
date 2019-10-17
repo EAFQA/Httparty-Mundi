@@ -14,9 +14,9 @@ class ApiToken
   end
 
   def self.find(token)
-    post("/Transacoes/IncluirCartao", headers: { "Authorization" => token,
-                                                 "Content-Type" => "application/x-www-form-urlencoded",
+    post("/Transacoes/IncluirCartao", headers: { "Content-Type" => "application/json",
                                                  "UserName" => "Yj3b0CsopkBR",
-                                                 "RequestOrigin" => "5" })
+                                                 "RequestOrigin" => "5",
+                                                 "Authorization" => "bearer #{token.parsed_response["access_token"]}" })
   end
 end

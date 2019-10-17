@@ -9,6 +9,7 @@ require_relative "../services/token_service.rb"
 require_relative "../services/newCard_service.rb"
 require_relative "../services/consultallcards_service.rb"
 require_relative "../services/generatebullet_service.rb"
+require_relative "../services/contadigital_service.rb"
 require_relative "../services/token.rb"
 
 RSpec.configure do |config|
@@ -16,6 +17,7 @@ RSpec.configure do |config|
   include Cadastrar
   include Consultar
   include GerarBoleto
+  include ContaDigital
 
   config.color = true
   config.formatter = :documentation

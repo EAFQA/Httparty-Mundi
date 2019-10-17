@@ -14,7 +14,7 @@ describe "post" do
 
     it "Entao recebo a confirmacao com sucesso" do
       header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
-                "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
+                 "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
       body = {
         "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "DataVencimento": "20191030", "Valor": 999,
                   "Email": "eduardo.andrade@mundibank.com.br",
@@ -30,7 +30,8 @@ describe "post" do
     end
     it "Email inválido" do
       header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
-                "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
+                 "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
+      body = {
         "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "DataVencimento": "20191030", "Valor": 999,
                   "Email": "eduardo.andrademundibank.com.br",
                   "DadosSacado": { "CpfCnpj": "09551826620", "Nome": "Eduardo Teste", "Endereco": "Rua Teste", "Bairro": "Teste",
