@@ -286,23 +286,154 @@ a {
 </div>
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_2" class="passed">Quando insiro um novo cartao</dt>
+  <dt id="example_group_2" class="passed">Quando cadastro um novo usuário</dt>
     <script type="text/javascript">makeRed('rspec-header');</script>
     <script type="text/javascript">makeRed('div_group_2');</script>
     <script type="text/javascript">makeRed('example_group_2');</script>
-    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <script type="text/javascript">moveProgressBar('3.8');</script>
     <dd class="example failed">
       <span class="failed_spec_name">Entao recebo a confirmacao com sucesso</span>
-      <span class="duration">0.28552s</span>
+      <span class="duration">0.66915s</span>
       <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: expect(@cadastropf.parsed_response[&quot;ResultCode&quot;]).to eql 0
+
+    expected: 0
+         got: 177
+
+    (compared using eql?)
+  # ./spec/contadigital/cadastropf_spec.rb:32:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/contadigital/cadastropf_spec.rb:32:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">30</span>      puts <span class="instance-variable">@cadastropf</span>
+<span class="linenum">31</span>      <span class="keyword">expect</span>(<span class="instance-variable">@cadastropf</span>.response.code).to eql <span class="string"><span class="delimiter">&quot;</span><span class="content">200</span><span class="delimiter">&quot;</span></span>
+<span class="offending"><span class="linenum">32</span>      <span class="keyword">expect</span>(<span class="instance-variable">@cadastropf</span>.parsed_response[<span class="string"><span class="delimiter">&quot;</span><span class="content">ResultCode</span><span class="delimiter">&quot;</span></span>]).to eql <span class="integer">0</span></span>
+<span class="linenum">33</span>      <span class="keyword">expect</span>(<span class="instance-variable">@cadastropf</span>.parsed_response[<span class="string"><span class="delimiter">&quot;</span><span class="content">Message</span><span class="delimiter">&quot;</span></span>]).to eql <span class="string"><span class="delimiter">&quot;</span><span class="content">Sucesso.</span><span class="delimiter">&quot;</span></span>
+<span class="linenum">34</span>    <span class="keyword">end</span></code></pre>
+      </div>
+    </dd>
+  </dl>
+</div>
+<div id="div_group_3" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_3" class="passed">post_token</dt>
+  </dl>
+</div>
+<div id="div_group_4" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_4" class="passed">generate token username invalid</dt>
+    <script type="text/javascript">moveProgressBar('7.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;400&quot;</span><span class='duration'>0.41120s</span></dd>
+    <script type="text/javascript">moveProgressBar('11.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;4&quot;</span><span class='duration'>0.57588s</span></dd>
+    <script type="text/javascript">moveProgressBar('15.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;Autorização negada.&quot;</span><span class='duration'>0.11208s</span></dd>
+  </dl>
+</div>
+<div id="div_group_5" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_5" class="passed">generate token password invalid</dt>
+    <script type="text/javascript">moveProgressBar('19.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;400&quot;</span><span class='duration'>0.28623s</span></dd>
+    <script type="text/javascript">moveProgressBar('23.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;4&quot;</span><span class='duration'>0.71383s</span></dd>
+    <script type="text/javascript">moveProgressBar('26.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;Autorização negada.&quot;</span><span class='duration'>0.34222s</span></dd>
+  </dl>
+</div>
+<div id="div_group_6" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_6" class="passed">generate token username blank</dt>
+    <script type="text/javascript">moveProgressBar('30.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;400&quot;</span><span class='duration'>0.10526s</span></dd>
+    <script type="text/javascript">moveProgressBar('34.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;4&quot;</span><span class='duration'>0.17723s</span></dd>
+    <script type="text/javascript">moveProgressBar('38.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;Autorização negada.&quot;</span><span class='duration'>0.13513s</span></dd>
+  </dl>
+</div>
+<div id="div_group_7" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_7" class="passed">generate token password blank</dt>
+    <script type="text/javascript">moveProgressBar('42.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;400&quot;</span><span class='duration'>0.25295s</span></dd>
+    <script type="text/javascript">moveProgressBar('46.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;4&quot;</span><span class='duration'>0.59199s</span></dd>
+    <script type="text/javascript">moveProgressBar('50.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;Autorização negada.&quot;</span><span class='duration'>0.78582s</span></dd>
+  </dl>
+</div>
+<div id="div_group_8" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_8" class="passed">generate token grant_type blank</dt>
+    <script type="text/javascript">moveProgressBar('53.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;400&quot;</span><span class='duration'>0.89143s</span></dd>
+    <script type="text/javascript">moveProgressBar('57.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;unsupported_grant_type&quot;</span><span class='duration'>0.37527s</span></dd>
+  </dl>
+</div>
+<div id="div_group_9" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_9" class="passed">generate token</dt>
+    <script type="text/javascript">moveProgressBar('61.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;200&quot;</span><span class='duration'>0.16224s</span></dd>
+    <script type="text/javascript">moveProgressBar('65.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql &quot;bearer&quot;</span><span class='duration'>0.30096s</span></dd>
+    <script type="text/javascript">moveProgressBar('69.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should eql 3599</span><span class='duration'>0.14682s</span></dd>
+  </dl>
+</div>
+<div id="div_group_10" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_10" class="passed">post</dt>
+  </dl>
+</div>
+<div id="div_group_11" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_11" class="passed">consultar todos cartoes</dt>
+    <script type="text/javascript">moveProgressBar('73.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Entao recebo a confirmacao com sucesso</span><span class='duration'>0.39317s</span></dd>
+    <script type="text/javascript">moveProgressBar('76.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">Entao recebo código canal não encontrado</span><span class='duration'>0.46162s</span></dd>
+    <script type="text/javascript">moveProgressBar('80.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Entao recebo código cliente não encontrado</span><span class='duration'>0.24250s</span></dd>
+  </dl>
+</div>
+<div id="div_group_12" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_12" class="passed">post</dt>
+  </dl>
+</div>
+<div id="div_group_13" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_13" class="passed">Quando emito um novo boleto</dt>
+    <script type="text/javascript">moveProgressBar('84.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">Entao recebo a confirmacao com sucesso</span><span class='duration'>2.14107s</span></dd>
+    <script type="text/javascript">moveProgressBar('88.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">Email inválido</span><span class='duration'>1.71327s</span></dd>
+  </dl>
+</div>
+<div id="div_group_14" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_14" class="passed">post</dt>
+  </dl>
+</div>
+<div id="div_group_15" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_15" class="passed">Quando insiro um novo cartao</dt>
+    <script type="text/javascript">makeRed('div_group_15');</script>
+    <script type="text/javascript">makeRed('example_group_15');</script>
+    <script type="text/javascript">moveProgressBar('92.3');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Entao recebo a confirmacao com sucesso</span>
+      <span class="duration">0.28664s</span>
+      <div class="failure" id="failure_2">
         <div class="message"><pre>  Failure/Error: expect(@card.parsed_response[&quot;ResultCode&quot;]).to eql 0
 
     expected: 0
          got: 5
 
     (compared using eql?)
-  # ./spec/newcard_spec.rb:20:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-        <div class="backtrace"><pre>./spec/newcard_spec.rb:20:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+  # ./spec/transacoes/newcard_spec.rb:20:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/transacoes/newcard_spec.rb:20:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
     <pre class="ruby"><code><span class="linenum">18</span>      <span class="instance-variable">@card</span> = <span class="constant">Cadastrar</span>.post(<span class="string"><span class="delimiter">&quot;</span><span class="content">/Transacoes/IncluirCartao</span><span class="delimiter">&quot;</span></span>, <span class="key">body</span>: <span class="instance-variable">@body</span>, <span class="key">headers</span>: <span class="instance-variable">@header</span>)
 <span class="linenum">19</span>      <span class="keyword">expect</span>(<span class="instance-variable">@card</span>.response.code).to eql <span class="string"><span class="delimiter">&quot;</span><span class="content">200</span><span class="delimiter">&quot;</span></span>
 <span class="offending"><span class="linenum">20</span>      <span class="keyword">expect</span>(<span class="instance-variable">@card</span>.parsed_response[<span class="string"><span class="delimiter">&quot;</span><span class="content">ResultCode</span><span class="delimiter">&quot;</span></span>]).to eql <span class="integer">0</span></span>
@@ -310,14 +441,14 @@ a {
 <span class="linenum">22</span>    <span class="keyword">end</span></code></pre>
       </div>
     </dd>
-    <script type="text/javascript">moveProgressBar('66.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">Numero do cartao ja utilizado</span><span class='duration'>0.20990s</span></dd>
+    <script type="text/javascript">moveProgressBar('96.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">Numero do cartao ja utilizado</span><span class='duration'>1.26643s</span></dd>
     <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Apelido ja utilizado</span><span class='duration'>0.17482s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">Apelido ja utilizado</span><span class='duration'>0.46024s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.93525 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "3 examples, 1 failure";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>14.29962 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "26 examples, 2 failures";</script>
 </div>
 </div>
 </body>
