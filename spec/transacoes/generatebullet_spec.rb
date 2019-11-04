@@ -16,7 +16,7 @@ describe "post" do
       header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
                  "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
       body = {
-        "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "DataVencimento": "20191030", "Valor": 999,
+        "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "DataVencimento": "20191130", "Valor": 999,
                   "Email": "eduardo.andrade@mundibank.com.br",
                   "DadosSacado": { "CpfCnpj": "09551826620", "Nome": "Eduardo Teste", "Endereco": "Rua Teste", "Bairro": "Teste",
                                    "Cidade": "São Pualo", "Cep": "05338000", "Uf": "SP" } },
@@ -32,7 +32,7 @@ describe "post" do
       header = { "Content-Type" => "application/json", "UserName" => "Yj3b0CsopkBR",
                  "RequestOrigin" => "5", "Authorization" => "bearer #{@token.parsed_response["access_token"]}" }
       body = {
-        "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "DataVencimento": "20191030", "Valor": 999,
+        "Data": { "CodigoCanal": 47, "CodigoCliente": 7309, "DataVencimento": "20191130", "Valor": 999,
                   "Email": "eduardo.andrademundibank.com.br",
                   "DadosSacado": { "CpfCnpj": "09551826620", "Nome": "Eduardo Teste", "Endereco": "Rua Teste", "Bairro": "Teste",
                                    "Cidade": "São Pualo", "Cep": "05338000", "Uf": "SP" } },
